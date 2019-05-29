@@ -1,33 +1,161 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #f1f4f6;
+  background-image: url('./image/cover.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-area {
+  background: #fff;
+  padding: 25px 30px;
+  width: 360px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 10px 10px 0 #e0e8ef;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-content {
+  height: 320px;
+  overflow: auto;
+}
+
+.no-todo {
+  font-size: 18px;
+  color: #607D8B;
+  text-align: center;
+  border: solid 2px #607D8B;
+  padding: 15px 10px;
+  border-radius: 4px;
+}
+
+.todo {
+  position: relative;
+  list-style: none;
+  font-size: 18px;
+  padding: 10px 0;
+  padding-left: 30px;
+  font-weight: 600;
+  color: #607D8B;
+}
+
+.todo:hover {
+  cursor: pointer;
+  color: #90A4AE;
+}
+
+.todo::before {
+  content: '';
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 13px;
+  height: 15px;
+  width: 15px;
+  background: transparent;
+  border: solid 2px #607D8B;
+  border-radius: 4px;
+}
+
+.todo:hover::before {
+  border-color: transparent;
+  background-color: #90A4AE;
+}
+
+.todo.completed {
+  text-decoration: line-through;
+}
+
+.todo.completed::before {
+  background-color: #607D8B;
+}
+
+.todo span {
+  position: absolute;
+  right: 0;
+  color: #fff;
+  background: #F44336;
+  opacity: 0;
+  font-weight: 900;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 3px 4px;
+  text-transform: uppercase;
+}
+
+.todo:hover span {
+  opacity: 1;
+}
+
+form {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+form h2 {
+  color: #607D8B;
+  padding: 8px 0;
+}
+
+form input {
+  background: #e0e8ef;
+  border: none;
+  font-size: 16px;
+  padding: 15px;
+  width: calc(100% - (30px + 15px));
+  border-radius: 4px;
+}
+
+form .action {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  right: 10px;
+  top: 0;
+}
+
+form .action span {
+  font-size: 42px;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 15px;
+  text-align: center;
+  line-height: 1;
+}
+
+form .action span.show {
+  color: #1d99ff;
+}
+
+form .action span.hide {
+  color: #F44336;
+}
+
+.footer-area {
+  margin-top: 25px;
+}
+
+.footer-area p {
+  color: #607D8B;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-area p a {
+  display: inline-block;
+  background: #1d99ff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
